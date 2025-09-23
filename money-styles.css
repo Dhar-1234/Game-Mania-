@@ -37,7 +37,7 @@
     margin-bottom: 24px;
 }
 
-.submit-button {
+#submit-button {
     width: 100%;
     padding: 12px;
     background: #0070ba;
@@ -54,4 +54,24 @@
     color: #666;
     text-align: center;
     margin-top: 24px;
+}
+
+.messages {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.messages > .message {
+    width: 300px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    font-family: sans-serif;
 }
