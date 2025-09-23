@@ -1,0 +1,32 @@
+* {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+}
+
+body {
+    background-color: hsl(0, 0%, 7.5%);
+}
+
+#tic-tac-toe-board {
+    border: 2px solid hsl(0, 0%, 79%);
+    width: clamp(200px, 50vw, 400px);
+    height: auto;
+    margin: auto;
+}
+
+.tic-tac-toe-square {
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid hsl(0, 0%, 79%);
+    width: 33.33%;
+}
+
+#top-row, #middle-row, #bottom-row {
+    display: flex;
+    flex-direction: row;
+}
