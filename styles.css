@@ -1,0 +1,21 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Bitcount Prop Double Ink';
+    src: url("Bitcount_Prop_Double_Ink/BitcountPropDoubleInk-font.ttf") format("trueType");
+}
+/* Structural Styles */
+html{
+    background-color: #333A3F;
+    text-align: center;
+    
+}
+
+h1 {
+    color:  beige;
+    font-family: "Bitcount Prop Double Ink", system-ui;
+    font-weight: 400;
+    font-size: 4em;
+}
+    
+    
+
