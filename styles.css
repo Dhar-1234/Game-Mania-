@@ -15,6 +15,22 @@ h1 {
     font-family: "Bitcount Prop Double Ink", system-ui;
     font-weight: 400;
     font-size: 4em;
+    margin-top: 100px;
+}
+
+h2 {
+    color: beige;
+    font-family: "Bitcount Prop Double Ink", system-ui;
+    font-weight: 400;
+    font-size: 2em;
+    margin-top: 120px;
+}
+
+h4{
+    color: beige;
+    font-size: 0.7em;
+    margin-top: -350px;
+    margin-right: -590px;
 }
     
     
