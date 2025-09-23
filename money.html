@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PayPal - Money Transfer</title>
     <link rel="stylesheet" href="money-styles.css">
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -13,8 +15,16 @@
             <h2 class="title">Send Money</h2>
         </div>
         <form>
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" value="depressed-absent-dad@gmail.com" id="email" name="email" disabled
+                class="form-input">
+
             <label for="recipient" class="form-label">Recipient Email or Mobile</label>
-            <input type="email" value="depressed-absent-dad@gmail.com" id="recipient" name="recipient" disabled class="form-input">
+            <input type="email" value="game-mania@gmail.com" id="recipient" name="recipient" disabled
+                class="form-input">
+
+            <label for="balance" class="form-label">Balance</label>
+            <input type="text" value="500.00" id="balance" name="balance" disabled class="form-input">
 
             <label for="amount" class="form-label">Amount</label>
             <input type="number" id="amount" name="amount" min="1" step="0.01" required class="form-input">
@@ -26,7 +36,7 @@
                 <option value="GBP">GBP - British Pound</option>
             </select>
 
-            <button type="submit" class="submit-button">Continue</button>
+            <button type="submit" id="submit-button">Continue</button>
         </form>
         <p class="footer">
             PayPal, Inc. &copy; 2024. All rights reserved.
@@ -34,5 +44,8 @@
     </div>
 
     <div id="messages" class="messages"></div>
+
+    <script src="money.js"></script>
 </body>
+
 </html>
