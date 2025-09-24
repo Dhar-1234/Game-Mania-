@@ -13,14 +13,23 @@ let gameState = GameState.ONGOING;
 
 const ticTacToeSquares = document.getElementsByClassName("tic-tac-toe-square");
 const boardState = [["NONE", "NONE", "NONE"],
-                    ["NONE", "NONE", "NONE"],
-                    ["NONE", "NONE", "NONE"]];
+["NONE", "NONE", "NONE"],
+["NONE", "NONE", "NONE"]];
 
 const xImage = document.getElementById("x-image");
 const oImage = document.getElementById("o-image");
+const gameStatus = document.getElementById("game-status");
 
-if (aiPlayer == Player.X)
-    makeAIMove();
+if (aiPlayer == Player.X) {
+    boardState[1][1] = 'X';
+    gameStatus.textContent = "AI's turn...";
+
+    setTimeout(() => {
+        placeXOrOAtSquare(rowColToSquareElement(1, 1));
+        activePlayer = Player.O;
+        updateGameStatusText();
+    }, Math.random() * 500 + 200);
+}
 
 addEventListener("mousedown", e => {
     if (gameState != GameState.ONGOING) return;
@@ -43,8 +52,10 @@ addEventListener("mousedown", e => {
 
     else {
         activePlayer = activePlayer == Player.X ? Player.O : Player.X;
+        updateGameStatusText();
+
         makeAIMove();
-        
+
         gameState = getGameState();
         if (gameState == GameState.LOSS_O || gameState == GameState.LOSS_X)
             alert("You lost...");
@@ -139,6 +150,23 @@ function didPlayerWin(player) {
     return false;
 }
 
+function updateGameStatusText() {
+    if (gameState == GameState.ONGOING) {
+        if (activePlayer == aiPlayer)
+            gameStatus.textContent = "AI's turn...";
+        else
+            gameStatus.textContent = "Your turn!";
+    }
+
+    else if (gameState == GameState.DRAW)
+        gameStatus.textContent = "It's a draw!";
+    else if (gameState == GameState.LOSS_O && aiPlayer == Player.O)
+        gameStatus.textContent = "You won!";
+    else if (gameState == GameState.LOSS_X && aiPlayer == Player.X)
+        gameStatus.textContent = "You won!";
+    else gameStatus.textContent = "You lost...";
+}
+
 function makeAIMove() {
     let [row, column] = findBestAIMove();
     boardState[row][column] = aiPlayer == Player.X ? "X" : "O";
@@ -146,6 +174,9 @@ function makeAIMove() {
     setTimeout(() => {
         placeXOrOAtSquare(rowColToSquareElement(row, column));
         activePlayer = activePlayer == Player.X ? Player.O : Player.X;
+
+        gameState = getGameState();
+        updateGameStatusText();
     }, Math.random() * 500 + 200);
 }
 
