@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Tic-Tac-Toe
+        </title>
+        <link rel="stylesheet" href="tic-tac-toe-styles.css">
+    </head>
+
+    <body>
+        <img src="images/redX.png" alt="red x" id="x-image" style="display: none; height: 100px; user-select: none;"  draggable="false">
+        <img src="images/blueO.png" alt="blue x" id="o-image" style="display: none; height: 120px; user-select: none;" draggable="false">
+
+        <a href="/index.html" id="back-button"><button>Home</button></a>
+
+        <h1>Tic-Tac-Toe Game</h1>
+
+        <div id="tic-tac-toe-board">
+            <div id="top-row">
+                <div id="top-left" class="tic-tac-toe-square"></div>
+                <div id="top-middle" class="tic-tac-toe-square"></div>
+                <div id="top-right" class="tic-tac-toe-square"></div>
+            </div>
+
+            <div id="middle-row">
+                <div id="middle-left" class="tic-tac-toe-square"></div>
+                <div id="middle-middle" class="tic-tac-toe-square"></div>
+                <div id="middle-right" class="tic-tac-toe-square"></div>
+            </div>
+
+            <div id="bottom-row">
+                <div id="bottom-left" class="tic-tac-toe-square"></div>
+                <div id="bottom-middle" class="tic-tac-toe-square"></div>
+                <div id="bottom-right" class="tic-tac-toe-square"></div>
+            </div>
+        </div>
+
+        <p id="game-status"></p>
+
+        <script src="tic-tac-toe.js"></script>
+    </body>
+</html>
