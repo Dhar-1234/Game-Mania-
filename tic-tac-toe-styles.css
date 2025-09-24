@@ -30,3 +30,18 @@ body {
     display: flex;
     flex-direction: row;
 }
+
+button {
+    color: black;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: .75em;
+}
