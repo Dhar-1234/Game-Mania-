@@ -103,29 +103,42 @@ $(document).ready(function(){
 		console.warn("Web Storage not supported! \
 					 Features for this site will be missing.");
 	}
-	$("#spin-btn").click(function(){
-		if ($("#try-your-luck").text() === "WINNER! WINNERR!") {
-			
-			return;
+$("#spin-btn").click(function(){
+	if ($("#try-your-luck").text() === "WINNER!") {
+		return;
+	}
+	else {
+		let dice = [];
+		for (let i = 0; i < slotClassArr.length; i++) {
+			let r = rng(0, iconIdsArr.length);
+			dice.push(r);
 		}
-		else {
-			let dice = [];
-			for (let i = 0; i < slotClassArr.length; i++) {
-				let r = rng(0, iconIdsArr.length);
-				dice.push(r);
-			}
-			spinCount += 1;
-			$("#num-spins").text(spinCount);
-			DataStore.loses += 1;
-			localStorage.setItem("NUM_LOSES", DataStore.loses);
 
-			console.log(`DEBUG: (${dice[0]}, ${dice[1]}, ${dice[2]})`); //debug
+		// 🔒 Prevent 3-of-a-kind (rigged)
+		if (dice[0] === dice[1] && dice[1] === dice[2]) {
+			dice[2] = (dice[2] + 1) % iconIdsArr.length;
+		}
 
-			magicAct(dice[0], dice[1], dice[2]);
-			winCondition(dice[0], dice[1], dice[2], spinCount);
-		}	
-		refreshStats();
-	});
+		spinCount += 1;
+		$("#num-spins").text(spinCount);
+		DataStore.loses += 1;
+		localStorage.setItem("NUM_LOSES", DataStore.loses);
+
+		console.log(`DEBUG (rigged): (${dice[0]}, ${dice[1]}, ${dice[2]})`);
+
+		magicAct(dice[0], dice[1], dice[2]);
+		winCondition(dice[0], dice[1], dice[2], spinCount);
+
+		// 🎯 Every 10 spins, show message and reset counter
+		if (spinCount >= 10) {
+			alert("This game is rigged! 😈");
+			spinCount = 0; // reset
+			$("#num-spins").text(spinCount); // update UI
+		}
+	}	
+	refreshStats();
+});
+
 
 	$("#reset-btn").click(() => {
 		location.reload();
