@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+:root {
+	--bgColor: rgb(0, 0, 0);
+
+	--titleBaseTextColor: rgb(203, 255, 231);
+	--titleHoverTextColor: rgb(186, 255, 108);
+
+	--boxBgColor:  #178CE9;
+	--boxBdColor: rgb(39, 39, 39);
+
+	--luckTextColor: #23DFF8;
+	--luckBgColor: black;
+
+	--slotBgColor: black;
+}
+
+body {
+	background-color: var(--bgColor);
+	margin: 20px 20px 0px 20px;
+	font-family: system-ui;
+}
+
+.page-title {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	font-size: 4em;
+	font-weight: 400;
+	font-family: "Ranchers", cursive;
+	text-align: center;
+	margin: 40px;
+	color: var(--titleBaseTextColor);
+}
+
+#ws-hack { visibility:hidden; }
+
+.game-box {
+	background-color: var(--boxBgColor);
+	border: 5px solid var(--boxBdColor);
+	border-radius: 10px;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 25px;
+	text-align: center;
+	font-size: 25px;
+}
+
+#try-your-luck {
+	font-family: 'Monoton', cursive;
+	font-size: 32px;
+	background-color: var(--luckBgColor);
+	color: var(--luckTextColor);
+	margin: 0px 5px 40px 5px;
+	padding: 5px 0px 5px 0px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.slot-machine {
+	height: 120px;
+	margin: 5%;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	grid-template-rows: 120px;
+	gap: 5px;
+	grid-template-areas: "s1 s2 s3";
+}
+
+.s1 { grid-area: s1; }
+.s2 { grid-area: s2; }
+.s3 { grid-area: s3; }
+
+.slot { 
+	background-color: var(--slotBgColor);
+	border-radius: 10px;
+}
+
+.icon {
+	margin-top: 15%;
+	width: 80px;
+	height: 80px;
+}
+
+.air-freshener { fill: rgb(160, 246, 255); }
+.anchor { fill: rgb(100, 93, 93); }
+.atom { fill: rgb(210, 244, 131); }
+.table-tennis { fill: #ffff88; }
+.hat-cowboy-side { fill: rgb(255, 190, 144); }
+
+#spin-btn {
+	width: 115px;
+	height: 65px;
+	font-size: 22px;
+	font-weight: bold;
+	margin-top: 40px;
+	margin-bottom: 0;
+	outline: none;
+	border-radius: 40px;
+}
+
+#spin-btn:hover { background-color: rgb(0, 0, 0); }
+
+.play-again-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+#reset-btn {
+	visibility: hidden;
+	text-align: center;
+	font-weight: bold;
+	color: rgb(130, 235, 130);
+	background-color: var(--titleBaseTextColor);
+	border: 3px solid rgba(171, 252, 168, 0.75);
+	border-radius: 10px;
+	padding: 10px;
+	outline: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#reset-btn:hover {
+	color:rgb(131, 234, 131);
+	background-color: rgb(0, 0, 0);
+}
+
+.number {
+	font-weight: bold;
+	padding-left: 10px;
+	font-size: 1.15em;
+}
