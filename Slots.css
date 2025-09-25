@@ -71,7 +71,6 @@ body {
 	grid-template-areas: "s1 s2 s3";
 }
 
-/* CSS Grid Containers */
 .s1 { grid-area: s1; }
 .s2 { grid-area: s2; }
 .s3 { grid-area: s3; }
@@ -87,12 +86,11 @@ body {
 	height: 80px;
 }
 
-/* Icon Color Adjustments */
-.air-freshener { fill: lime; }
-.anchor { fill: grey; }
-.atom { fill: white; }
-.table-tennis { fill: yellow; }
-.hat-cowboy-side { fill: saddlebrown; }
+.air-freshener { fill: rgb(160, 246, 255); }
+.anchor { fill: rgb(100, 93, 93); }
+.atom { fill: rgb(210, 244, 131); }
+.table-tennis { fill: #ffff88; }
+.hat-cowboy-side { fill: rgb(255, 190, 144); }
 
 #spin-btn {
 	width: 115px;
@@ -105,16 +103,7 @@ body {
 	border-radius: 40px;
 }
 
-#spin-btn:hover { background-color: rgb(45, 70, 253); }
-
-.footer-container {
-	padding: 0px 20px 0px 0px;
-	bottom: 0;
-	right: 2;
-	width: 100%;
-	height: 220px;
-	font-size: 14px;
-}
+#spin-btn:hover { background-color: rgb(0, 0, 0); }
 
 .play-again-container {
 	display: flex;
@@ -127,9 +116,9 @@ body {
 	visibility: hidden;
 	text-align: center;
 	font-weight: bold;
-	color: green;
+	color: rgb(130, 235, 130);
 	background-color: var(--titleBaseTextColor);
-	border: 3px solid rgba(47, 99, 255, 0.75);
+	border: 3px solid rgba(171, 252, 168, 0.75);
 	border-radius: 10px;
 	padding: 10px;
 	outline: 0;
@@ -139,35 +128,12 @@ body {
 }
 
 #reset-btn:hover {
-	color:rgb(216, 219, 216);
-	background-color: whitesmoke;
+	color:rgb(131, 234, 131);
+	background-color: rgb(0, 0, 0);
 }
-
-#stats-title { padding: 0px; }
-
-#stats-title a {
-	color: black;
-	text-decoration: none;
-}
-
-#stats-title a:hover{ color: rgb(117, 43, 255); }
-
-.game-stats {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	text-align: right;
-}
-
-.ul { text-decoration: underline; }
 
 .number {
 	font-weight: bold;
 	padding-left: 10px;
 	font-size: 1.15em;
-}
-
-.spin-again-count {
-    font-weight: bold;
-	padding-left: 10px;
 }
