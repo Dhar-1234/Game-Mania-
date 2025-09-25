@@ -54,19 +54,19 @@ function displayMessage() {
 
 setInterval(displayMessage, Math.random() * 5000 + 3000); // Random interval between 3 to 8 seconds
 
+const balance = localStorage.getItem('balance') || '500.00';
+document.getElementById('balance').value = parseFloat(balance).toFixed(2);
+
 document.querySelector('form').addEventListener('submit', e => {
     e.preventDefault();
     
     const moneyTransfer = +document.getElementById('amount').value;
-    const balance = +document.getElementById('balance').value;
-
-    console.log(moneyTransfer, balance);
-
     if (moneyTransfer > balance) {
         alert('Insufficient funds!');
         return;
     }
 
+    localStorage.setItem('balance', (balance - moneyTransfer).toFixed(2));
     alert(`Successfully sent $${moneyTransfer.toFixed(2)} to Game Mania!`);
     window.location.href = 'index.html';
 });
