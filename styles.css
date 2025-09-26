@@ -60,6 +60,7 @@ h2 {
 #games-container {
     display: flex;
     justify-content: center;
+    gap: 20px;
 }
 
 #tic-tac-toe {
@@ -72,9 +73,6 @@ h2 {
 }
 
 #Slots{
-    position: absolute;
-    bottom: 190px;
-    left: 660px;
     width: 180px;
     height: 140px;
 }
