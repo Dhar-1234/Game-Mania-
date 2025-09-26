@@ -70,3 +70,12 @@ h2 {
     cursor: pointer;
     scale: 1.1;
 }
+
+#Slots{
+    position: absolute;
+    bottom: 190px;
+    left: 660px;
+    width: 180px;
+    height: 140px;
+}
+
