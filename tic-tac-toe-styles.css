@@ -15,6 +15,12 @@ body {
     margin: auto;
 }
 
+#big-win {
+    color: hsl(120, 87%, 44%);
+    font-style: italic;
+    font-weight: bold;
+}
+
 .tic-tac-toe-square {
     aspect-ratio: 1 / 1;
 

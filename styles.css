@@ -1,21 +1,22 @@
 @charset "UTF-8";
+
 @font-face {
     font-family: 'Bitcount Prop Double Ink';
     src: url("Bitcount_Prop_Double_Ink/BitcountPropDoubleInk-font.ttf") format("trueType");
 }
+
 /* Structural Styles */
-html{
+html {
     background-color: #333A3F;
     text-align: center;
-    
 }
 
 h1 {
-    color:  beige;
+    color: beige;
     font-family: "Bitcount Prop Double Ink", system-ui;
     font-weight: 400;
     font-size: 4em;
-    margin-top: 100px;
+    margin-bottom: 30px;
 }
 
 h2 {
@@ -23,34 +24,49 @@ h2 {
     font-family: "Bitcount Prop Double Ink", system-ui;
     font-weight: 400;
     font-size: 2em;
-    margin-top: 120px;
+    margin-top: 0px;
 }
 
-p{
+#credit {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+
+    color: white;
+    text-align: left;
+}
+
+#donation {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+
     color: beige;
     font-size: 0.7em;
-    margin-top: -350px;
-    margin-right: -700px;
 }
 
-#click-here{
-    color: black;
-    background-color: gainsboro;
+#click-here {
+    color: hsl(219, 82%, 53%);
 }
-#Game-Mania{
+
+#Game-Mania {
     position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 105px;
-    height: 70px;
+    top: 10px;
+    left: 10px;
+    width: 75px;
 }
 
-#Tic-Tac-Toe{
-    position: absolute;
-    bottom: 190px;
-    left: 360px;
-    width: 170px;
-    height: 140px;
+#games-container {
+    display: flex;
+    justify-content: center;
 }
 
+#tic-tac-toe {
+    transition: all 0.25s;
+}
 
+#tic-tac-toe:hover {
+    cursor: pointer;
+    scale: 1.1;
+}

@@ -8,8 +8,10 @@ const GameState = Object.freeze({
 });
 
 let activePlayer = Player.X;
-let aiPlayer = Player.X;
+let aiPlayer = Math.random() < 0.5 ? Player.X : Player.O;
 let gameState = GameState.ONGOING;
+
+console.log(aiPlayer == Player.X ? "AI is X" : "AI is O");
 
 const ticTacToeSquares = document.getElementsByClassName("tic-tac-toe-square");
 const boardState = [["NONE", "NONE", "NONE"],
@@ -19,6 +21,10 @@ const boardState = [["NONE", "NONE", "NONE"],
 const xImage = document.getElementById("x-image");
 const oImage = document.getElementById("o-image");
 const gameStatus = document.getElementById("game-status");
+
+const credit = localStorage.getItem('gameManiaCredit') || '0';
+const bet = localStorage.getItem('ticTacToeBet') || '0';
+document.getElementById('bet-amount').innerText = parseFloat(bet).toFixed(2);
 
 if (aiPlayer == Player.X) {
     boardState[1][1] = 'X';
@@ -30,6 +36,8 @@ if (aiPlayer == Player.X) {
         updateGameStatusText();
     }, Math.random() * 500 + 200);
 }
+
+else updateGameStatusText();
 
 addEventListener("mousedown", e => {
     if (gameState != GameState.ONGOING) return;
@@ -44,23 +52,30 @@ addEventListener("mousedown", e => {
     placeXOrOAtSquare(clickedElement);
 
     gameState = getGameState();
-
-    if (gameState == GameState.LOSS_O || gameState == GameState.LOSS_X)
+    if (gameState == GameState.LOSS_O || gameState == GameState.LOSS_X) {
         alert("You won!");
-    else if (gameState == GameState.DRAW)
-        alert("It's a draw");
+        // not adding money to local storage haha scammed
+    }
+
+    else if (gameState == GameState.DRAW) {
+        localStorage.setItem('gameManiaCredit', (parseFloat(credit) + Math.floor(bet / 2)).toFixed(2));
+        alert(`It's a draw. You lost ${Math.ceil(bet / 2)} GameMania credits.`);
+    }
 
     else {
         activePlayer = activePlayer == Player.X ? Player.O : Player.X;
         updateGameStatusText();
 
         makeAIMove();
-
         gameState = getGameState();
+
         if (gameState == GameState.LOSS_O || gameState == GameState.LOSS_X)
-            alert("You lost...");
-        else if (gameState == GameState.DRAW)
-            alert("It's a draw");
+            alert(`You lost ${bet} GameMania credits...`);
+        
+        else if (gameState == GameState.DRAW) {
+            localStorage.setItem('gameManiaCredit', (parseFloat(credit) + Math.floor(bet / 2)).toFixed(2));
+            alert(`It's a draw. You lost ${Math.ceil(bet / 2)} GameMania credits.`);
+        }
     }
 });
 
