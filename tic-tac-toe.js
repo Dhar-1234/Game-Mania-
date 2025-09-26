@@ -11,6 +11,8 @@ let activePlayer = Player.X;
 let aiPlayer = Math.random() < 0.5 ? Player.X : Player.O;
 let gameState = GameState.ONGOING;
 
+console.log(aiPlayer == Player.X ? "AI is X" : "AI is O");
+
 const ticTacToeSquares = document.getElementsByClassName("tic-tac-toe-square");
 const boardState = [["NONE", "NONE", "NONE"],
 ["NONE", "NONE", "NONE"],
@@ -30,6 +32,8 @@ if (aiPlayer == Player.X) {
         updateGameStatusText();
     }, Math.random() * 500 + 200);
 }
+
+else updateGameStatusText();
 
 addEventListener("mousedown", e => {
     if (gameState != GameState.ONGOING) return;
