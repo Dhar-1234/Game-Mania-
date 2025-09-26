@@ -20,6 +20,9 @@ const xImage = document.getElementById("x-image");
 const oImage = document.getElementById("o-image");
 const gameStatus = document.getElementById("game-status");
 
+const bet = localStorage.getItem('ticTacToeBet') || '0';
+document.getElementById('bet-amount').innerText = parseFloat(bet).toFixed(2);
+
 if (aiPlayer == Player.X) {
     boardState[1][1] = 'X';
     gameStatus.textContent = "AI's turn...";

@@ -15,12 +15,12 @@ document.getElementById('tic-tac-toe').addEventListener('click', () => {
         return;
     }
 
-    if (bet > parseFloat(credit)) {
-        alert('Insufficient GameMania Credits for this bet.');
-        return;
-    }
+    // if (bet > parseFloat(credit)) {
+    //     alert('Insufficient GameMania Credits for this bet.');
+    //     return;
+    // }
 
-    localStorage.setItem('gameManiaCredit', (parseFloat(credit) - bet.toFixed(2)).toFixed(2));
+    // localStorage.setItem('gameManiaCredit', (parseFloat(credit) - bet.toFixed(2)).toFixed(2));
     localStorage.setItem('ticTacToeBet', bet.toFixed(2));
 
     window.location.href = '/Tic-Tac-Toe.html';
