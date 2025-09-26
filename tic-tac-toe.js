@@ -8,7 +8,7 @@ const GameState = Object.freeze({
 });
 
 let activePlayer = Player.X;
-let aiPlayer = Player.X;
+let aiPlayer = Math.random() < 0.5 ? Player.X : Player.O;
 let gameState = GameState.ONGOING;
 
 const ticTacToeSquares = document.getElementsByClassName("tic-tac-toe-square");
