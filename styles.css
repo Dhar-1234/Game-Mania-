@@ -51,3 +51,12 @@ h2 {
     display: flex;
     justify-content: center;
 }
+
+#tic-tac-toe {
+    transition: all 0.25s;
+}
+
+#tic-tac-toe:hover {
+    cursor: pointer;
+    scale: 1.1;
+}
