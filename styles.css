@@ -1,17 +1,18 @@
 @charset "UTF-8";
+
 @font-face {
     font-family: 'Bitcount Prop Double Ink';
     src: url("Bitcount_Prop_Double_Ink/BitcountPropDoubleInk-font.ttf") format("trueType");
 }
 
 /* Structural Styles */
-html{
+html {
     background-color: #333A3F;
     text-align: center;
 }
 
 h1 {
-    color:  beige;
+    color: beige;
     font-family: "Bitcount Prop Double Ink", system-ui;
     font-weight: 400;
     font-size: 4em;
@@ -26,6 +27,15 @@ h2 {
     margin-top: 0px;
 }
 
+#credit {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+
+    color: white;
+    text-align: left;
+}
+
 #donation {
     position: absolute;
     bottom: 0px;
@@ -36,11 +46,11 @@ h2 {
     font-size: 0.7em;
 }
 
-#click-here{
+#click-here {
     color: hsl(219, 82%, 53%);
 }
 
-#Game-Mania{
+#Game-Mania {
     position: absolute;
     top: 10px;
     left: 10px;

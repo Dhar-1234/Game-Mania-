@@ -66,7 +66,10 @@ document.querySelector('form').addEventListener('submit', e => {
         return;
     }
 
+    const prevCredit = parseFloat(localStorage.getItem('gameManiaCredit') || '0');
     localStorage.setItem('balance', (balance - moneyTransfer).toFixed(2));
+    localStorage.setItem('gameManiaCredit', (prevCredit + moneyTransfer).toFixed(2));
+
     alert(`Successfully sent $${moneyTransfer.toFixed(2)} to Game Mania!`);
     window.location.href = 'index.html';
 });
