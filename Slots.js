@@ -114,7 +114,6 @@ $("#spin-btn").click(function(){
 			dice.push(r);
 		}
 
-		// 🔒 Prevent 3-of-a-kind (rigged)
 		if (dice[0] === dice[1] && dice[1] === dice[2]) {
 			dice[2] = (dice[2] + 1) % iconIdsArr.length;
 		}
@@ -129,9 +128,9 @@ $("#spin-btn").click(function(){
 		magicAct(dice[0], dice[1], dice[2]);
 		winCondition(dice[0], dice[1], dice[2], spinCount);
 
-		// 🎯 Every 10 spins, show message and reset counter
+		// Every 10 spins, show message and reset counter
 		if (spinCount >= 10) {
-			alert("This game is rigged! 😈");
+			alert("HAHA This game is rigged! Thanks for your moneyyy 😈");
 			spinCount = 0; // reset
 			$("#num-spins").text(spinCount); // update UI
 		}
