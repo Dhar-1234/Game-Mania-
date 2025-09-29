@@ -129,6 +129,13 @@ $("#spin-btn").click(function(){
 		winCondition(dice[0], dice[1], dice[2], spinCount);
 
 	refreshStats();
+	// Every 10 spins, show message and reset counter
+		if (spinCount >= 10) {
+			alert("HAHA This game is rigged! Thanks for your moneyyy 😈");
+			spinCount = 0; // reset
+			$("#num-spins").text(spinCount); // update UI
+		}
+	}	
 });
 
 
