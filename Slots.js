@@ -128,14 +128,14 @@ $("#spin-btn").click(function(){
 		magicAct(dice[0], dice[1], dice[2]);
 		winCondition(dice[0], dice[1], dice[2], spinCount);
 
-		// Every 10 spins, show message and reset counter
+	refreshStats();
+	// Every 10 spins, show message and reset counter
 		if (spinCount >= 10) {
 			alert("HAHA This game is rigged! Thanks for your moneyyy 😈");
 			spinCount = 0; // reset
 			$("#num-spins").text(spinCount); // update UI
 		}
 	}	
-	refreshStats();
 });
 
 
